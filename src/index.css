@@ -134,7 +134,7 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
     @apply font-heading;
   }
 
-  code, pre, .font-mono {
+  code, pre {
     @apply font-mono;
   }
 }
