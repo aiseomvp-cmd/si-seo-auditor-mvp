@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GradientCard } from "@/components/ui/GradientCard";
@@ -14,6 +15,8 @@ import { Bell, Link as LinkIcon, BarChart3, Search, DollarSign, Webhook, Brain, 
 const ProjectSettings = () => {
   const { id } = useParams();
   const { toast } = useToast();
+  const [project, setProject] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState({
     weeklyAudit: false,
     notificationEmail: "",
@@ -33,24 +36,92 @@ const ProjectSettings = () => {
     playwrightEndpoint: "",
   });
 
-  const handleSave = () => {
-    // Save to localStorage for demo
-    localStorage.setItem('project-settings', JSON.stringify(settings));
-    toast({
-      title: "Settings Updated!",
-      description: "Your project settings have been saved successfully.",
-      variant: "default",
-    });
+  // Load project data and settings
+  useEffect(() => {
+    const loadProject = async () => {
+      if (!id) return;
+      
+      try {
+        // For now, create a mock project object
+        // TODO: Connect to Supabase once tables are properly set up
+        setProject({
+          id,
+          url: 'demo-site.com',
+          region: 'US',
+          audience: 'General',
+          status: 'ACTIVE'
+        });
+        
+        // Load settings from localStorage
+        const savedSettings = localStorage.getItem('project-settings');
+        const savedApiSettings = localStorage.getItem('api-settings');
+        
+        if (savedSettings) {
+          setSettings(JSON.parse(savedSettings));
+        }
+        
+        if (savedApiSettings) {
+          setApiSettings(JSON.parse(savedApiSettings));
+        }
+      } catch (error) {
+        console.error('Error loading project:', error);
+        toast({
+          title: "Error Loading Project",
+          description: "Failed to load project settings.",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProject();
+  }, [id, toast]);
+
+  const handleSave = async () => {
+    try {
+      // Save to localStorage for persistence
+      localStorage.setItem('project-settings', JSON.stringify(settings));
+      
+      // You could also save to Supabase here if needed
+      // await supabase.from('project_settings').upsert({ project_id: id, ...settings });
+      
+      toast({
+        title: "Settings Updated!",
+        description: "Your project settings have been saved successfully.",
+        variant: "default",
+      });
+    } catch (error) {
+      console.error('Error saving settings:', error);
+      toast({
+        title: "Error Saving Settings",
+        description: "Failed to save your settings. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
-  const handleSaveApiSettings = () => {
-    // Save to localStorage for demo
-    localStorage.setItem('api-settings', JSON.stringify(apiSettings));
-    toast({
-      title: "API Settings Saved!",
-      description: "Your API configurations have been saved successfully.",
-      variant: "default",
-    });
+  const handleSaveApiSettings = async () => {
+    try {
+      // Save to localStorage for persistence
+      localStorage.setItem('api-settings', JSON.stringify(apiSettings));
+      
+      // You could also save to Supabase here if needed
+      // await supabase.from('api_settings').upsert({ project_id: id, ...apiSettings });
+      
+      toast({
+        title: "API Settings Saved!",
+        description: "Your API configurations have been saved successfully.",
+        variant: "default",
+      });
+    } catch (error) {
+      console.error('Error saving API settings:', error);
+      toast({
+        title: "Error Saving API Settings",
+        description: "Failed to save your API settings. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleTestConnection = (apiName: string) => {
@@ -67,16 +138,32 @@ const ProjectSettings = () => {
     { name: "SEMrush", icon: DollarSign, description: "Competitive intelligence", color: "text-orange-500" },
   ];
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-header">
+        <Header />
+        <main className="container mx-auto px-4 py-8 max-w-4xl">
+          <div className="flex justify-center items-center h-96">
+            <div className="text-white text-lg">Loading project settings...</div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-header">
       <Header />
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-heading font-bold mb-2 text-gradient">
+          <h1 className="text-3xl font-heading font-bold mb-2 text-white">
             Project Settings
           </h1>
-          <p className="text-muted-foreground">Project ID: {id}</p>
+          <p className="text-white/80">
+            {project?.url || 'Unknown Project'} • Project ID: {id}
+          </p>
           <div className="wavy-divider w-24 mt-4"></div>
         </div>
 
@@ -84,7 +171,7 @@ const ProjectSettings = () => {
           {/* Alert Settings */}
           <GradientCard elevated>
             <div className="flex items-center space-x-3 mb-6">
-              <Bell className="w-6 h-6 text-brand-blue" />
+              <Bell className="w-6 h-6 text-brand-purple" />
               <h2 className="text-xl font-heading font-bold">Alert Settings</h2>
             </div>
             
@@ -149,7 +236,7 @@ const ProjectSettings = () => {
           {/* API Configuration */}
           <GradientCard elevated>
             <div className="flex items-center space-x-3 mb-6">
-              <Key className="w-6 h-6 text-brand-teal" />
+              <Key className="w-6 h-6 text-brand-blue" />
               <h2 className="text-xl font-heading font-bold">API Configuration</h2>
             </div>
             

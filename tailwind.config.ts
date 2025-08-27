@@ -26,11 +26,12 @@ export default {
 			colors: {
 				// Brand Colors
 				brand: {
+					magenta: 'hsl(var(--brand-magenta))',
+					purple: 'hsl(var(--brand-purple))',
 					blue: 'hsl(var(--brand-blue))',
-					teal: 'hsl(var(--brand-teal))',
-					lime: 'hsl(var(--brand-lime))',
+					cyan: 'hsl(var(--brand-cyan))',
 					light: 'hsl(var(--brand-light))',
-					'card-gray': 'hsl(var(--brand-card-gray))',
+					card: 'hsl(var(--brand-card))',
 					dark: 'hsl(var(--brand-dark))',
 				},
 				// System Colors

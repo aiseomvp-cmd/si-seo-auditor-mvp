@@ -8,53 +8,54 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
 
 @layer base {
   :root {
-    /* Brand Color Palette */
-    --brand-blue: 215 97% 42%;        /* #034EA2 */
-    --brand-teal: 179 93% 34%;        /* #08A29E */
-    --brand-lime: 67 33% 49%;         /* #A2B458 */
-    --brand-light: 220 20% 96%;       /* #F4F6F9 */
-    --brand-card-gray: 210 14% 93%;   /* #EEF1F4 */
-    --brand-dark: 0 0% 11%;           /* #1C1C1C */
+    /* Brand Color Palette - Inspired by screenshot gradient */
+    --brand-magenta: 318 100% 54%;     /* Deep magenta/purple */
+    --brand-purple: 270 91% 65%;       /* Purple middle */
+    --brand-blue: 210 100% 56%;        /* Bright blue */
+    --brand-cyan: 180 100% 70%;        /* Light cyan */
+    --brand-light: 220 20% 98%;        /* Ultra light background */
+    --brand-card: 0 0% 100%;           /* Pure white cards */
+    --brand-dark: 225 9% 9%;           /* Dark text */
 
     /* Core System Colors */
-    --background: var(--brand-light);
+    --background: linear-gradient(135deg, hsl(var(--brand-magenta)) 0%, hsl(var(--brand-purple)) 35%, hsl(var(--brand-blue)) 100%);
     --foreground: var(--brand-dark);
 
-    --card: 0 0% 100%;
+    --card: var(--brand-card);
     --card-foreground: var(--brand-dark);
 
-    --popover: 0 0% 100%;
+    --popover: var(--brand-card);
     --popover-foreground: var(--brand-dark);
 
     --primary: var(--brand-blue);
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--brand-card-gray);
+    --secondary: var(--brand-light);
     --secondary-foreground: var(--brand-dark);
 
-    --muted: var(--brand-card-gray);
+    --muted: 210 20% 95%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: var(--brand-teal);
-    --accent-foreground: 0 0% 98%;
+    --accent: var(--brand-purple);
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: var(--brand-card-gray);
-    --input: var(--brand-card-gray);
+    --border: 220 13% 91%;
+    --input: var(--brand-card);
     --ring: var(--brand-blue);
 
-    --success: var(--brand-lime);
-    --success-foreground: 0 0% 98%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
 
     --radius: 0.75rem;
 
     /* Brand Gradients */
-    --gradient-header: linear-gradient(90deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-teal)) 100%);
-    --gradient-cta: radial-gradient(circle, hsl(var(--brand-lime)) 0%, hsl(var(--brand-blue)) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(var(--brand-light)) 0%, hsl(var(--brand-card-gray)) 100%);
-    --gradient-underline: linear-gradient(90deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-teal)) 50%, hsl(var(--brand-lime)) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(var(--brand-magenta)) 0%, hsl(var(--brand-purple)) 35%, hsl(var(--brand-blue)) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--brand-purple)) 0%, hsl(var(--brand-blue)) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--brand-card)) 0%, hsl(220 20% 99%) 100%);
+    --gradient-underline: linear-gradient(90deg, hsl(var(--brand-magenta)) 0%, hsl(var(--brand-purple)) 50%, hsl(var(--brand-blue)) 100%);
 
     /* Shadows */
     --shadow-card: 0 4px 20px -4px hsl(var(--brand-blue) / 0.1);
@@ -127,7 +128,9 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply text-foreground font-body;
+    background: var(--background);
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
