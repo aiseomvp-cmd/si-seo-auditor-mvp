@@ -53,7 +53,7 @@ const NewProject = () => {
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 text-gradient">
+          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 text-white">
             AI-SEO Audit
           </h1>
           <div className="wavy-divider w-32 mx-auto mb-6"></div>
