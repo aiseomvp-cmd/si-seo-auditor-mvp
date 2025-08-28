@@ -58,7 +58,7 @@ const ProjectProgress = () => {
       
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-heading font-bold mb-4 text-gradient">
+          <h1 className="text-3xl font-heading font-bold mb-4 text-white">
             Audit in Progress
           </h1>
           <div className="wavy-divider w-24 mx-auto"></div>
@@ -69,8 +69,8 @@ const ProjectProgress = () => {
             {/* Progress Bar */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium">Overall Progress</span>
-                <span className="text-sm text-muted-foreground">{Math.round(progress)}%</span>
+                <span className="text-sm font-medium text-brand-dark">Overall Progress</span>
+                <span className="text-sm text-brand-dark/70">{Math.round(progress)}%</span>
               </div>
               <Progress value={progress} className="h-3" />
             </div>
@@ -92,8 +92,8 @@ const ProjectProgress = () => {
                       step.icon
                     )}
                   </div>
-                  <h3 className="font-semibold text-sm">{step.name}</h3>
-                  <p className="text-xs text-muted-foreground">{step.description}</p>
+                  <h3 className="font-semibold text-sm text-brand-dark">{step.name}</h3>
+                  <p className="text-xs text-brand-dark/70">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -104,16 +104,16 @@ const ProjectProgress = () => {
         <GradientCard className="text-center shimmer">
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-heading font-bold mb-2">
+              <h2 className="text-2xl font-heading font-bold mb-2 text-brand-dark">
                 Your site is being analyzed!
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-brand-dark/70">
                 This usually takes 3-5 minutes. Feel free to close this tab—we'll email your results.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Fetching data from:</h3>
+              <h3 className="text-lg font-semibold mb-4 text-brand-dark">Fetching data from:</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {dataSources.map((source, index) => (
                   <div key={source.name} className="flex flex-col items-center space-y-2">
@@ -128,7 +128,7 @@ const ProjectProgress = () => {
                         <span>{source.logo}</span>
                       )}
                     </div>
-                    <span className="font-mono text-sm">{source.name}</span>
+                    <span className="font-mono text-sm text-brand-dark">{source.name}</span>
                   </div>
                 ))}
               </div>

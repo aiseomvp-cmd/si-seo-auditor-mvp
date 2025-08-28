@@ -49,10 +49,10 @@ const ProjectOverview = () => {
       <main className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-heading font-bold mb-2 text-gradient">
+          <h1 className="text-3xl font-heading font-bold mb-2 text-white">
             Audit Results Dashboard
           </h1>
-          <p className="text-muted-foreground">Project ID: {id}</p>
+          <p className="text-white/80">Project ID: {id}</p>
           <div className="wavy-divider w-24 mt-4"></div>
         </div>
 
@@ -72,23 +72,23 @@ const ProjectOverview = () => {
               <GradientCard elevated>
                 <div className="text-center">
                   <div className="text-3xl font-bold count-up text-brand-blue">78</div>
-                  <div className="text-sm text-muted-foreground font-mono">SEO Score</div>
+                  <div className="text-sm text-brand-dark font-mono">SEO Score</div>
                   <TrendingUp className="w-6 h-6 mx-auto mt-2 text-success" />
                 </div>
               </GradientCard>
               
               <GradientCard elevated>
                 <div className="text-center">
-                  <div className="text-3xl font-bold count-up text-brand-teal">65</div>
-                  <div className="text-sm text-muted-foreground font-mono">AI Citation Score</div>
-                  <TrendingUp className="w-6 h-6 mx-auto mt-2 text-brand-teal" />
+                  <div className="text-3xl font-bold count-up text-brand-purple">65</div>
+                  <div className="text-sm text-brand-dark font-mono">AI Citation Score</div>
+                  <TrendingUp className="w-6 h-6 mx-auto mt-2 text-brand-purple" />
                 </div>
               </GradientCard>
               
               <GradientCard elevated>
                 <div className="text-center">
                   <div className="text-3xl font-bold count-up text-destructive">12</div>
-                  <div className="text-sm text-muted-foreground font-mono">Critical Issues</div>
+                  <div className="text-sm text-brand-dark font-mono">Critical Issues</div>
                   <AlertTriangle className="w-6 h-6 mx-auto mt-2 text-destructive" />
                 </div>
               </GradientCard>
@@ -97,7 +97,7 @@ const ProjectOverview = () => {
             {/* Gaps Table */}
             <GradientCard elevated>
               <div className="space-y-4">
-                <h2 className="text-xl font-heading font-bold">Opportunity Gaps</h2>
+                <h2 className="text-xl font-heading font-bold text-brand-dark">Opportunity Gaps</h2>
                 <div className="overflow-x-auto">
                   <Table>
                     <TableHeader>
@@ -145,11 +145,11 @@ const ProjectOverview = () => {
             <ShimmerPlaceholder message="Connect GA4 to unlock traffic forecasts">
               <GradientCard>
                 <div className="space-y-4">
-                  <h2 className="text-xl font-heading font-bold">6 Month Traffic Uplift Forecast</h2>
+                  <h2 className="text-xl font-heading font-bold text-brand-dark">6 Month Traffic Uplift Forecast</h2>
                   <div className="h-64 bg-muted/20 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                      <TrendingUp className="w-12 h-12 mx-auto mb-2 text-muted-foreground" />
-                      <p className="text-muted-foreground">Chart will appear here</p>
+                      <TrendingUp className="w-12 h-12 mx-auto mb-2 text-brand-dark" />
+                      <p className="text-brand-dark">Chart will appear here</p>
                     </div>
                   </div>
                   <Button variant="hero" className="w-full">
@@ -171,8 +171,8 @@ const ProjectOverview = () => {
           <TabsContent value="seo">
             <ShimmerPlaceholder>
               <GradientCard>
-                <h2 className="text-xl font-heading font-bold mb-4">SEO Issues Analysis</h2>
-                <p className="text-muted-foreground">Detailed SEO issues and recommendations will appear here.</p>
+                <h2 className="text-xl font-heading font-bold mb-4 text-brand-dark">SEO Issues Analysis</h2>
+                <p className="text-brand-dark/70">Detailed SEO issues and recommendations will appear here.</p>
               </GradientCard>
             </ShimmerPlaceholder>
           </TabsContent>
@@ -180,15 +180,15 @@ const ProjectOverview = () => {
           <TabsContent value="ai">
             <ShimmerPlaceholder>
               <GradientCard>
-                <h2 className="text-xl font-heading font-bold mb-4">AI Visibility Report</h2>
-                <p className="text-muted-foreground">AI citation analysis and visibility metrics will appear here.</p>
+                <h2 className="text-xl font-heading font-bold mb-4 text-brand-dark">AI Visibility Report</h2>
+                <p className="text-brand-dark/70">AI citation analysis and visibility metrics will appear here.</p>
               </GradientCard>
             </ShimmerPlaceholder>
           </TabsContent>
 
           <TabsContent value="wins">
             <GradientCard elevated>
-              <h2 className="text-xl font-heading font-bold mb-4">Quick Wins</h2>
+              <h2 className="text-xl font-heading font-bold mb-4 text-brand-dark">Quick Wins</h2>
               <div className="space-y-4">
                 {mockGaps
                   .filter(gap => gap.quickWin)
@@ -196,8 +196,8 @@ const ProjectOverview = () => {
                     <div key={index} className="flex items-start space-x-3 p-4 bg-success/10 rounded-lg border border-success/20">
                       <CheckCircle className="w-5 h-5 text-success mt-0.5" />
                       <div>
-                        <h3 className="font-semibold">{gap.issue}</h3>
-                        <p className="text-sm text-muted-foreground">{gap.recommendation}</p>
+                        <h3 className="font-semibold text-brand-dark">{gap.issue}</h3>
+                        <p className="text-sm text-brand-dark/70">{gap.recommendation}</p>
                         <div className="flex space-x-2 mt-2">
                           <Badge variant="outline">Low Effort</Badge>
                           <Badge variant="destructive">High Impact</Badge>
@@ -212,8 +212,8 @@ const ProjectOverview = () => {
           <TabsContent value="settings">
             <div className="max-w-2xl">
               <GradientCard elevated>
-                <h2 className="text-xl font-heading font-bold mb-4">Project Settings</h2>
-                <p className="text-muted-foreground mb-4">Manage alerts, integrations, and notifications for this audit.</p>
+                <h2 className="text-xl font-heading font-bold mb-4 text-brand-dark">Project Settings</h2>
+                <p className="text-brand-dark/70 mb-4">Manage alerts, integrations, and notifications for this audit.</p>
                 <Button variant="hero">
                   Go to Settings
                 </Button>
