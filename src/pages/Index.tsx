@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GradientCard } from "@/components/ui/GradientCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Target, TrendingUp, Zap, BarChart3, Brain } from "lucide-react";
+import { Sparkles, Target, TrendingUp, Zap, BarChart3, Brain, Search, Users, Award } from "lucide-react";
 
 const Index = () => {
   const features = [
@@ -12,25 +12,25 @@ const Index = () => {
       icon: Brain,
       title: "AI Visibility Analysis",
       description: "Test how AI systems like ChatGPT and Perplexity cite your healthcare content",
-      color: "text-white drop-shadow-sm",
+      color: "text-brand-blue drop-shadow-sm",
     },
     {
-      icon: Target,
+      icon: Search,
       title: "Healthcare SEO Audit",
       description: "Specialized SEO analysis for pharmaceutical and medical device companies",
-      color: "text-white drop-shadow-sm",
+      color: "text-brand-purple drop-shadow-sm",
     },
     {
-      icon: TrendingUp,
+      icon: Users,
       title: "Competitive Intelligence",
       description: "See how competitors rank for key healthcare queries and identify gaps",
-      color: "text-white drop-shadow-sm",
+      color: "text-brand-magenta drop-shadow-sm",
     },
     {
-      icon: Zap,
+      icon: Award,
       title: "Quick Wins Identification",
       description: "Get prioritized recommendations for immediate SEO improvements",
-      color: "text-white drop-shadow-sm",
+      color: "text-brand-cyan drop-shadow-sm",
     },
   ];
 
