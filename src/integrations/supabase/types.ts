@@ -14,7 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ai_results: {
+        Row: {
+          cited_questions: Json | null
+          id: string
+          project_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          cited_questions?: Json | null
+          id?: string
+          project_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          cited_questions?: Json | null
+          id?: string
+          project_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_results_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      gap_actions: {
+        Row: {
+          id: string
+          issue: string
+          priority: number | null
+          project_id: string | null
+          recommendation: string
+          user_id: string | null
+        }
+        Insert: {
+          id?: string
+          issue: string
+          priority?: number | null
+          project_id?: string | null
+          recommendation: string
+          user_id?: string | null
+        }
+        Update: {
+          id?: string
+          issue?: string
+          priority?: number | null
+          project_id?: string | null
+          recommendation?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "gap_actions_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          audience: string | null
+          created_at: string | null
+          id: string
+          region: string | null
+          status: string | null
+          url: string
+          use_semrush: boolean | null
+          user_id: string | null
+        }
+        Insert: {
+          audience?: string | null
+          created_at?: string | null
+          id?: string
+          region?: string | null
+          status?: string | null
+          url: string
+          use_semrush?: boolean | null
+          user_id?: string | null
+        }
+        Update: {
+          audience?: string | null
+          created_at?: string | null
+          id?: string
+          region?: string | null
+          status?: string | null
+          url?: string
+          use_semrush?: boolean | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      target_questions: {
+        Row: {
+          id: string
+          project_id: string | null
+          question: string
+          user_id: string | null
+        }
+        Insert: {
+          id?: string
+          project_id?: string | null
+          question: string
+          user_id?: string | null
+        }
+        Update: {
+          id?: string
+          project_id?: string | null
+          question?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "target_questions_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
