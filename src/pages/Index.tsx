@@ -12,25 +12,25 @@ const Index = () => {
       icon: Brain,
       title: "AI Visibility Analysis",
       description: "Test how AI systems like ChatGPT and Perplexity cite your healthcare content",
-      color: "text-brand-blue",
+      color: "text-white drop-shadow-sm",
     },
     {
       icon: Target,
       title: "Healthcare SEO Audit",
       description: "Specialized SEO analysis for pharmaceutical and medical device companies",
-      color: "text-brand-teal",
+      color: "text-white drop-shadow-sm",
     },
     {
       icon: TrendingUp,
       title: "Competitive Intelligence",
       description: "See how competitors rank for key healthcare queries and identify gaps",
-      color: "text-brand-lime",
+      color: "text-white drop-shadow-sm",
     },
     {
       icon: Zap,
       title: "Quick Wins Identification",
       description: "Get prioritized recommendations for immediate SEO improvements",
-      color: "text-orange-500",
+      color: "text-white drop-shadow-sm",
     },
   ];
 
@@ -115,7 +115,7 @@ const Index = () => {
             {features.map((feature, index) => (
               <GradientCard key={index} elevated className="text-center">
                 <feature.icon className={`w-12 h-12 mx-auto mb-4 ${feature.color}`} />
-                <h3 className="text-lg font-heading font-semibold mb-3">
+                <h3 className="text-lg font-heading font-semibold mb-3 text-brand-dark">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-brand-dark/70">

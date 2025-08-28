@@ -169,7 +169,7 @@ const NewProject = () => {
 
             {/* Future Integrations */}
             <div>
-              <h3 className="text-lg font-heading font-semibold mb-4">
+              <h3 className="text-lg font-heading font-semibold mb-4 text-white drop-shadow-sm">
                 Future Integrations
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -179,7 +179,7 @@ const NewProject = () => {
                     checked={formData.enableGA4}
                     onCheckedChange={(checked) => setFormData({...formData, enableGA4: !!checked})}
                   />
-                  <Label htmlFor="ga4" className="text-sm">
+                  <Label htmlFor="ga4" className="text-sm text-white drop-shadow-sm">
                     GA4 Audit (coming soon)
                   </Label>
                 </div>
@@ -189,7 +189,7 @@ const NewProject = () => {
                     checked={formData.enableGSC}
                     onCheckedChange={(checked) => setFormData({...formData, enableGSC: !!checked})}
                   />
-                  <Label htmlFor="gsc" className="text-sm">
+                  <Label htmlFor="gsc" className="text-sm text-white drop-shadow-sm">
                     GSC Import (coming soon)
                   </Label>
                 </div>
@@ -199,7 +199,7 @@ const NewProject = () => {
                     checked={formData.enableOtherAPI}
                     onCheckedChange={(checked) => setFormData({...formData, enableOtherAPI: !!checked})}
                   />
-                  <Label htmlFor="otherapi" className="text-sm">
+                  <Label htmlFor="otherapi" className="text-sm text-white drop-shadow-sm">
                     Other API (future expansion)
                   </Label>
                 </div>
