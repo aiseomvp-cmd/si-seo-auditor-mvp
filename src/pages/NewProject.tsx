@@ -134,7 +134,7 @@ const NewProject = () => {
                   <Label htmlFor="targetQuestions" className="text-base font-semibold">
                     Target Questions *
                   </Label>
-                  <p className="text-sm text-white/80 mb-2">
+                  <p className="text-sm text-brand-dark mb-2">
                     What should AI answer about your brand? One question per line, min 10
                   </p>
                   <Textarea
@@ -152,7 +152,7 @@ const NewProject = () => {
                   <Label htmlFor="competitorDomains" className="text-base font-semibold">
                     Competitor Domains (Optional)
                   </Label>
-                  <p className="text-sm text-white/80 mb-2">
+                  <p className="text-sm text-brand-dark mb-2">
                     domain.com, one per line
                   </p>
                   <Textarea
@@ -169,7 +169,7 @@ const NewProject = () => {
 
             {/* Future Integrations */}
             <div>
-              <h3 className="text-lg font-heading font-semibold mb-4 text-white drop-shadow-sm">
+              <h3 className="text-lg font-heading font-semibold mb-4 text-brand-dark">
                 Future Integrations
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -179,7 +179,7 @@ const NewProject = () => {
                     checked={formData.enableGA4}
                     onCheckedChange={(checked) => setFormData({...formData, enableGA4: !!checked})}
                   />
-                  <Label htmlFor="ga4" className="text-sm text-white drop-shadow-sm">
+                  <Label htmlFor="ga4" className="text-sm text-brand-dark">
                     GA4 Audit (coming soon)
                   </Label>
                 </div>
@@ -189,7 +189,7 @@ const NewProject = () => {
                     checked={formData.enableGSC}
                     onCheckedChange={(checked) => setFormData({...formData, enableGSC: !!checked})}
                   />
-                  <Label htmlFor="gsc" className="text-sm text-white drop-shadow-sm">
+                  <Label htmlFor="gsc" className="text-sm text-brand-dark">
                     GSC Import (coming soon)
                   </Label>
                 </div>
@@ -199,7 +199,7 @@ const NewProject = () => {
                     checked={formData.enableOtherAPI}
                     onCheckedChange={(checked) => setFormData({...formData, enableOtherAPI: !!checked})}
                   />
-                  <Label htmlFor="otherapi" className="text-sm text-white drop-shadow-sm">
+                  <Label htmlFor="otherapi" className="text-sm text-brand-dark">
                     Other API (future expansion)
                   </Label>
                 </div>
