@@ -41,6 +41,7 @@ const NewProject = () => {
     toast({
       title: "Audit Started!",
       description: "Your SEO audit is now being processed.",
+      className: "border-green-200 bg-green-50 text-green-900",
     });
 
     navigate(`/projects/${projectId}/progress`);
