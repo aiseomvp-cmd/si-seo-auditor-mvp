@@ -59,11 +59,11 @@ const Index = () => {
             
             <div className="wavy-divider w-32 mx-auto mb-6"></div>
             
-            <p className="text-xl md:text-2xl text-muted-foreground font-heading mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white font-heading mb-8 leading-relaxed">
               Empowering Healthcare SEO in the Age of AI
             </p>
             
-            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 mb-12 max-w-2xl mx-auto">
               The first platform designed specifically for healthcare marketers to understand and optimize 
               their digital presence in AI-driven search environments.
             </p>
@@ -90,7 +90,7 @@ const Index = () => {
                   <div className="text-4xl font-bold text-brand-blue count-up mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground font-medium">
+                  <div className="text-muted-foreground font-medium text-brand-dark">
                     {stat.label}
                   </div>
                 </div>
@@ -105,7 +105,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-gradient">
               Why Healthcare Needs Specialized SEO
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Traditional SEO tools don't understand healthcare regulations, AI citation patterns, 
               or the unique challenges of medical content optimization.
             </p>
@@ -118,7 +118,7 @@ const Index = () => {
                 <h3 className="text-lg font-heading font-semibold mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-brand-dark/70">
                   {feature.description}
                 </p>
               </GradientCard>
@@ -160,7 +160,7 @@ const Index = () => {
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-gradient">
               Ready to Optimize for the AI Era?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-brand-dark/70 mb-8">
               Join forward-thinking healthcare marketers who are already preparing for AI-driven search.
             </p>
             <Link to="/projects/new">

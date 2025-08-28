@@ -57,7 +57,7 @@ const NewProject = () => {
             AI-SEO Audit
           </h1>
           <div className="wavy-divider w-32 mx-auto mb-6"></div>
-          <p className="text-xl text-muted-foreground font-heading">
+          <p className="text-xl text-white font-heading">
             Empowering Healthcare SEO in the Age of AI
           </p>
         </div>
@@ -134,7 +134,7 @@ const NewProject = () => {
                   <Label htmlFor="targetQuestions" className="text-base font-semibold">
                     Target Questions *
                   </Label>
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-sm text-white/80 mb-2">
                     What should AI answer about your brand? One question per line, min 10
                   </p>
                   <Textarea
@@ -152,7 +152,7 @@ const NewProject = () => {
                   <Label htmlFor="competitorDomains" className="text-base font-semibold">
                     Competitor Domains (Optional)
                   </Label>
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-sm text-white/80 mb-2">
                     domain.com, one per line
                   </p>
                   <Textarea

@@ -34,7 +34,7 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
     --secondary-foreground: var(--brand-dark);
 
     --muted: 0 0% 100%;
-    --muted-foreground: 215 25% 35%;
+    --muted-foreground: 0 0% 100%;
 
     --accent: var(--brand-purple);
     --accent-foreground: 0 0% 100%;
