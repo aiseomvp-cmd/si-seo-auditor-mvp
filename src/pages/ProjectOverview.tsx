@@ -59,11 +59,11 @@ const ProjectOverview = () => {
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="bg-gradient-card border-0">
-            <TabsTrigger value="overview" className="font-semibold">Overview</TabsTrigger>
-            <TabsTrigger value="seo">SEO Issues</TabsTrigger>
-            <TabsTrigger value="ai">AI Visibility</TabsTrigger>
-            <TabsTrigger value="wins">Quick Wins</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
+            <TabsTrigger value="overview" className="font-semibold text-brand-dark">Overview</TabsTrigger>
+            <TabsTrigger value="seo" className="font-semibold text-brand-dark">SEO Issues</TabsTrigger>
+            <TabsTrigger value="ai" className="font-semibold text-brand-dark">AI Visibility</TabsTrigger>
+            <TabsTrigger value="wins" className="font-semibold text-brand-dark">Quick Wins</TabsTrigger>
+            <TabsTrigger value="settings" className="font-semibold text-brand-dark">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -102,19 +102,19 @@ const ProjectOverview = () => {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Issue</TableHead>
-                        <TableHead>Page/Question</TableHead>
-                        <TableHead>Impact</TableHead>
-                        <TableHead>Effort</TableHead>
-                        <TableHead>Recommendation</TableHead>
-                        <TableHead>Quick Win</TableHead>
+                        <TableHead className="text-brand-dark">Issue</TableHead>
+                        <TableHead className="text-brand-dark">Page/Question</TableHead>
+                        <TableHead className="text-brand-dark">Impact</TableHead>
+                        <TableHead className="text-brand-dark">Effort</TableHead>
+                        <TableHead className="text-brand-dark">Recommendation</TableHead>
+                        <TableHead className="text-brand-dark">Quick Win</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {mockGaps.map((gap, index) => (
                         <TableRow key={index}>
-                          <TableCell className="font-medium">{gap.issue}</TableCell>
-                          <TableCell className="font-mono text-sm">{gap.page}</TableCell>
+                          <TableCell className="font-medium text-brand-dark">{gap.issue}</TableCell>
+                          <TableCell className="font-mono text-sm text-brand-dark">{gap.page}</TableCell>
                           <TableCell>
                             <Badge variant={gap.impact === 'High' ? 'destructive' : gap.impact === 'Medium' ? 'default' : 'secondary'}>
                               {gap.impact}
@@ -125,7 +125,7 @@ const ProjectOverview = () => {
                               {gap.effort}
                             </Badge>
                           </TableCell>
-                          <TableCell>{gap.recommendation}</TableCell>
+                          <TableCell className="text-brand-dark">{gap.recommendation}</TableCell>
                           <TableCell>
                             {gap.quickWin && (
                               <Badge className="bg-success text-success-foreground">
