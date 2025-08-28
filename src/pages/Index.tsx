@@ -53,7 +53,7 @@ const Index = () => {
               Indegene Hackathon Demo
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-gradient">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-white">
               AI-SEO Audit Platform
             </h1>
             
@@ -87,10 +87,10 @@ const Index = () => {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               {stats.map((stat, index) => (
                 <div key={index}>
-                  <div className="text-4xl font-bold text-brand-blue count-up mb-2">
+                  <div className="text-4xl font-bold text-black count-up mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground font-medium text-brand-dark">
+                  <div className="text-black font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -102,7 +102,7 @@ const Index = () => {
         {/* Features Section */}
         <section className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-gradient">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">
               Why Healthcare Needs Specialized SEO
             </h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
