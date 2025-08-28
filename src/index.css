@@ -19,7 +19,7 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
 
     /* Core System Colors */
     --background: linear-gradient(135deg, hsl(var(--brand-magenta)) 0%, hsl(var(--brand-purple)) 35%, hsl(var(--brand-blue)) 100%);
-    --foreground: var(--brand-dark);
+    --foreground: 0 0% 100%;
 
     --card: var(--brand-card);
     --card-foreground: var(--brand-dark);
@@ -30,11 +30,11 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
     --primary: var(--brand-blue);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--brand-light);
+    --secondary: 0 0% 100%;
     --secondary-foreground: var(--brand-dark);
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 0 0% 100%;
+    --muted-foreground: 215 25% 35%;
 
     --accent: var(--brand-purple);
     --accent-foreground: 0 0% 100%;
@@ -42,8 +42,8 @@ All colors MUST be HSL. Brand palette: Blue, Teal, Lime, Light, Card Gray, Dark
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: var(--brand-card);
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
     --ring: var(--brand-blue);
 
     --success: 142 71% 45%;
