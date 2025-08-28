@@ -59,11 +59,11 @@ const ProjectOverview = () => {
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="bg-gradient-card border-0">
-            <TabsTrigger value="overview" className="font-semibold text-brand-dark">Overview</TabsTrigger>
-            <TabsTrigger value="seo" className="font-semibold text-brand-dark">SEO Issues</TabsTrigger>
-            <TabsTrigger value="ai" className="font-semibold text-brand-dark">AI Visibility</TabsTrigger>
-            <TabsTrigger value="wins" className="font-semibold text-brand-dark">Quick Wins</TabsTrigger>
-            <TabsTrigger value="settings" className="font-semibold text-brand-dark">Settings</TabsTrigger>
+            <TabsTrigger value="overview" className="font-semibold text-brand-dark data-[state=active]:text-green-600">Overview</TabsTrigger>
+            <TabsTrigger value="seo" className="font-semibold text-brand-dark data-[state=active]:text-green-600">SEO Issues</TabsTrigger>
+            <TabsTrigger value="ai" className="font-semibold text-brand-dark data-[state=active]:text-green-600">AI Visibility</TabsTrigger>
+            <TabsTrigger value="wins" className="font-semibold text-brand-dark data-[state=active]:text-green-600">Quick Wins</TabsTrigger>
+            <TabsTrigger value="settings" className="font-semibold text-brand-dark data-[state=active]:text-green-600">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
