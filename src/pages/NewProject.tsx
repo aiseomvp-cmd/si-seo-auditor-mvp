@@ -168,44 +168,6 @@ const NewProject = () => {
               </div>
             </div>
 
-            {/* Future Integrations */}
-            <div>
-              <h3 className="text-lg font-heading font-semibold mb-4 text-brand-dark">
-                Future Integrations
-              </h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="flex items-center space-x-3">
-                  <Checkbox
-                    id="ga4"
-                    checked={formData.enableGA4}
-                    onCheckedChange={(checked) => setFormData({...formData, enableGA4: !!checked})}
-                  />
-                  <Label htmlFor="ga4" className="text-sm text-brand-dark">
-                    GA4 Audit (coming soon)
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Checkbox
-                    id="gsc"
-                    checked={formData.enableGSC}
-                    onCheckedChange={(checked) => setFormData({...formData, enableGSC: !!checked})}
-                  />
-                  <Label htmlFor="gsc" className="text-sm text-brand-dark">
-                    GSC Import (coming soon)
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Checkbox
-                    id="otherapi"
-                    checked={formData.enableOtherAPI}
-                    onCheckedChange={(checked) => setFormData({...formData, enableOtherAPI: !!checked})}
-                  />
-                  <Label htmlFor="otherapi" className="text-sm text-brand-dark">
-                    Other API (future expansion)
-                  </Label>
-                </div>
-              </div>
-            </div>
 
             {/* Submit Button */}
             <div className="flex justify-center pt-4">
