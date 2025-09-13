@@ -9,8 +9,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const NewProject = () => {
   const navigate = useNavigate();
@@ -23,28 +23,52 @@ const NewProject = () => {
     targetQuestions: "",
     competitorDomains: "",
     useSEMrush: false,
-    enableGA4: false,
-    enableGSC: false,
-    enableOtherAPI: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // Validate required fields
+      if (!formData.websiteUrl || !formData.targetQuestions) {
+        toast({
+          title: "Missing Information",
+          description: "Please fill in all required fields.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
 
-    // Generate a mock project ID
-    const projectId = Math.random().toString(36).substr(2, 9);
+      // Call the edge function to create audit
+      const { data, error } = await supabase.functions.invoke('create-seo-audit', {
+        body: formData
+      });
 
-    toast({
-      title: "Audit Started!",
-      description: "Your SEO audit is now being processed.",
-      className: "border-green-200 bg-green-50 text-green-900",
-    });
+      if (error) {
+        throw error;
+      }
 
-    navigate(`/projects/${projectId}/progress`);
+      toast({
+        title: "Audit Started!",
+        description: "Your SEO audit is now being processed.",
+        className: "border-green-200 bg-green-50 text-green-900",
+      });
+
+      // Navigate to project overview with the audit ID
+      navigate(`/projects/${data.auditId}/overview`);
+
+    } catch (error) {
+      console.error('Error creating audit:', error);
+      toast({
+        title: "Error",
+        description: "Failed to start audit. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
