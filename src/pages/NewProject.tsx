@@ -56,8 +56,8 @@ const NewProject = () => {
         className: "border-green-200 bg-green-50 text-green-900",
       });
 
-      // Navigate to project overview with the audit ID
-      navigate(`/projects/${data.auditId}/overview`);
+      // Navigate to project progress with the audit ID
+      navigate(`/projects/${data.auditId}/progress`);
 
     } catch (error) {
       console.error('Error creating audit:', error);
